@@ -1,0 +1,145 @@
+/* ===========================
+   MBTI 공부법 연구소 — Carbon Design System 기반 테마 토큰
+   출처: carbondesignsystem.com (IBM Carbon Design System)
+   라이트 = White 테마, 다크 = Gray 100 테마 색상 값을 그대로 사용
+   =========================== */
+
+:root {
+  /* Carbon 색상 팔레트 (원본 hex) */
+  --gray-10: #f4f4f4;
+  --gray-20: #e0e0e0;
+  --gray-30: #c6c6c6;
+  --gray-40: #a8a8a8;
+  --gray-50: #8d8d8d;
+  --gray-60: #6f6f6f;
+  --gray-70: #525252;
+  --gray-80: #393939;
+  --gray-90: #262626;
+  --gray-100: #161616;
+  --blue-30: #a6c8ff;
+  --blue-40: #78a9ff;
+  --blue-50: #4589ff;
+  --blue-60: #0f62fe;
+  --blue-70: #0043ce;
+  --blue-80: #002d9c;
+
+  /* 라이트(White) 테마 토큰 — 기본값 */
+  --cds-background: #ffffff;
+  --cds-layer-01: var(--gray-10);
+  --cds-layer-02: #ffffff;
+  --cds-layer-hover-01: var(--gray-20);
+  --cds-layer-accent-01: var(--gray-10);
+  --cds-text-primary: var(--gray-100);
+  --cds-text-secondary: var(--gray-70);
+  --cds-text-helper: var(--gray-60);
+  --cds-text-on-color: #ffffff;
+  --cds-icon-primary: var(--gray-100);
+  --cds-icon-secondary: var(--gray-70);
+  --cds-border-subtle-00: var(--gray-20);
+  --cds-border-subtle-01: var(--gray-30);
+  --cds-border-strong: var(--gray-50);
+  --cds-link-primary: var(--blue-60);
+  --cds-link-primary-hover: var(--blue-70);
+  --cds-interactive: var(--blue-60);
+  --cds-button-primary: var(--blue-60);
+  --cds-button-primary-hover: var(--blue-70);
+  --cds-button-primary-active: var(--blue-80);
+  --cds-focus: var(--blue-60);
+  --cds-support-error: #da1e28;
+  --cds-support-error-bg: #fff1f1;
+
+  /* Carbon 스페이싱 스케일 (8px 그리드) */
+  --cds-spacing-02: 0.25rem;
+  --cds-spacing-03: 0.5rem;
+  --cds-spacing-04: 0.75rem;
+  --cds-spacing-05: 1rem;
+  --cds-spacing-06: 1.5rem;
+  --cds-spacing-07: 2rem;
+  --cds-spacing-08: 2.5rem;
+  --cds-spacing-09: 3rem;
+  --cds-spacing-10: 4rem;
+
+  /* Carbon 모션 토큰 */
+  --cds-ease-standard: cubic-bezier(0.2, 0, 0.38, 0.9);
+  --cds-duration-fast: 110ms;
+  --cds-duration-moderate: 150ms;
+
+  --header-height: 3rem;
+}
+
+/* 다크(Gray 100) 테마 — 시스템 선호 또는 저장된 설정에 따라 적용 */
+:root[data-theme="dark"] {
+  --cds-background: var(--gray-100);
+  --cds-layer-01: var(--gray-90);
+  --cds-layer-02: var(--gray-80);
+  --cds-layer-hover-01: #333333;
+  --cds-layer-accent-01: var(--gray-90);
+  --cds-text-primary: var(--gray-10);
+  --cds-text-secondary: var(--gray-30);
+  --cds-text-helper: var(--gray-40);
+  --cds-text-on-color: #ffffff;
+  --cds-icon-primary: var(--gray-10);
+  --cds-icon-secondary: var(--gray-30);
+  --cds-border-subtle-00: var(--gray-80);
+  --cds-border-subtle-01: var(--gray-70);
+  --cds-border-strong: var(--gray-60);
+  --cds-link-primary: var(--blue-40);
+  --cds-link-primary-hover: var(--blue-30);
+  --cds-interactive: var(--blue-50);
+  --cds-button-primary: var(--blue-60);
+  --cds-button-primary-hover: var(--blue-50);
+  --cds-button-primary-active: var(--blue-40);
+  --cds-focus: #ffffff;
+  --cds-support-error: #fa4d56;
+  --cds-support-error-bg: #2d0709;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "IBM Plex Sans KR", "IBM Plex Sans", -apple-system, BlinkMacSystemFont,
+    "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  background-color: var(--cds-background);
+  color: var(--cds-text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color var(--cds-duration-moderate) var(--cds-ease-standard),
+    color var(--cds-duration-moderate) var(--cds-ease-standard);
+}
+
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+a {
+  color: var(--cds-link-primary);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 400;
+  color: var(--cds-text-primary);
+}
+
+:focus-visible {
+  outline: 2px solid var(--cds-focus);
+  outline-offset: 2px;
+}

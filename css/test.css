@@ -1,40 +1,39 @@
 /* ===========================
-   MBTI 공부법 연구소 - 자가진단 테스트 페이지 전용 스타일
+   MBTI 공부법 연구소 — 자가진단 테스트 페이지 전용 스타일
+   Carbon Progress Bar / Selectable Tile 패턴
    =========================== */
 
 .progress-wrap {
-  background: var(--border);
-  border-radius: 999px;
-  height: 10px;
+  background: var(--cds-border-subtle-00);
+  height: 4px;
   overflow: hidden;
   margin-bottom: 28px;
 }
 
 .progress-bar {
   height: 100%;
-  background: var(--purple);
+  background: var(--cds-interactive);
   width: 0%;
-  transition: width 0.3s;
+  transition: width var(--cds-duration-moderate) var(--cds-ease-standard);
 }
 
 .question {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  background: var(--cds-layer-01);
+  border: 1px solid var(--cds-border-subtle-00);
   padding: 24px;
-  margin-bottom: 18px;
-  box-shadow: var(--shadow);
+  margin-bottom: 1px;
 }
 
 .question p.q-text {
-  font-weight: 700;
+  font-weight: 600;
   margin: 0 0 14px;
-  font-size: 1.02rem;
+  font-size: 1rem;
+  color: var(--cds-text-primary);
 }
 
 .options {
   display: grid;
-  gap: 10px;
+  gap: 8px;
 }
 
 .option-label {
@@ -42,53 +41,54 @@
   align-items: center;
   gap: 10px;
   padding: 12px 14px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
+  background: var(--cds-layer-02);
+  border: 1px solid var(--cds-border-subtle-01);
   cursor: pointer;
-  transition: background 0.15s, border-color 0.15s;
+  color: var(--cds-text-secondary);
+  transition: border-color var(--cds-duration-fast) var(--cds-ease-standard),
+    background-color var(--cds-duration-fast) var(--cds-ease-standard);
 }
 
 .option-label:hover {
-  background: var(--purple-light);
+  background: var(--cds-layer-hover-01);
 }
 
 .option-label input {
-  accent-color: var(--purple);
+  accent-color: var(--cds-interactive);
 }
 
-.option-label input:checked ~ span,
 .option-label:has(input:checked) {
-  border-color: var(--purple);
-  background: var(--purple-light);
+  border: 2px solid var(--cds-interactive);
+  padding: 11px 13px;
+  color: var(--cds-text-primary);
 }
 
 .form-error {
   display: none;
-  color: #b3382c;
-  background: #fbe8e5;
-  border-radius: 10px;
+  color: var(--cds-support-error);
+  background: var(--cds-support-error-bg);
+  border-left: 3px solid var(--cds-support-error);
   padding: 12px 16px;
   margin-bottom: 16px;
   font-weight: 600;
+  font-size: 0.9rem;
 }
 
 #result-panel {
   display: none;
   text-align: center;
-  background: var(--card-bg);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  background: var(--cds-layer-01);
+  border: 1px solid var(--cds-border-subtle-00);
   padding: 40px 24px;
 }
 
-#result-panel .badge {
-  display: inline-block;
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #fff;
-  background: var(--purple);
-  padding: 8px 24px;
-  border-radius: 999px;
+#result-panel .tag {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--cds-interactive);
+  border: none;
+  padding: 6px 20px;
   margin-bottom: 16px;
 }
 

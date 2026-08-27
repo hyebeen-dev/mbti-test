@@ -2,10 +2,22 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8" />
+<script>
+(function () {
+  try {
+    var stored = localStorage.getItem("mbti-theme");
+    var theme = stored || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+  } catch (e) {}
+})();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>SP 탐험가형 공부법 | MBTI 공부법 연구소</title>
 <meta name="description" content="ISTP, ISFP, ESTP, ESFP SP 탐험가형 그룹의 공부 성향, 유형별 공부법, 시험 꿀팁을 소개합니다." />
-<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&display=swap" />
+<link rel="stylesheet" href="css/theme.css" />
 <link rel="stylesheet" href="css/base.css" />
 <link rel="stylesheet" href="css/components.css" />
 </head>
@@ -14,24 +26,42 @@
 <header class="site-header">
   <div class="container header-inner">
     <a href="index.html" class="logo">MBTI 공부법 연구소</a>
-    <nav class="main-nav">
+    <div class="header-right">
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html">홈</a></li>
+          <li><a href="nt.html">NT</a></li>
+          <li><a href="nf.html">NF</a></li>
+          <li><a href="sj.html">SJ</a></li>
+          <li><a href="sp.html">SP</a></li>
+          <li><a href="test.html" class="nav-cta">공부 유형 찾기</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="다크 모드로 전환">
+        <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
       <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
-      <ul class="nav-list">
-        <li><a href="index.html">홈</a></li>
-        <li><a href="nt.html">NT</a></li>
-        <li><a href="nf.html">NF</a></li>
-        <li><a href="sj.html">SJ</a></li>
-        <li><a href="sp.html">SP</a></li>
-        <li><a href="test.html" class="nav-cta">공부 유형 찾기</a></li>
-      </ul>
-    </nav>
+    </div>
   </div>
 </header>
 
 <main>
   <section class="hero">
     <div class="container">
-      <span class="badge" style="background:var(--purple-light);color:var(--purple-dark);padding:6px 16px;border-radius:999px;font-weight:800;">SP 탐험가형</span>
+      <span class="tag" style="font-size:0.95rem;padding:6px 16px;">SP 탐험가형</span>
       <h1>실전과 체험으로 배우는 사람들</h1>
       <p>ISTP · ISFP · ESTP · ESFP — 직접 부딪히고 몸으로 익힐 때 가장 빠르게 배우는 그룹입니다.</p>
     </div>
