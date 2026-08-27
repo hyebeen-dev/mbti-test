@@ -1,0 +1,263 @@
+/* ===========================
+   MBTI 공부법 연구소 - 기본 스타일
+   (리셋 · 변수 · 타이포 · 버튼 · 헤더 · 히어로 · 푸터)
+   =========================== */
+
+:root {
+  --bg-cream: #faf6ef;
+  --bg-cream-alt: #f3ecdf;
+  --card-bg: #fffdf9;
+  --purple: #7b5cd6;
+  --purple-dark: #5b3fa0;
+  --purple-light: #efe7fb;
+  --text-main: #3a2f45;
+  --text-sub: #6f6478;
+  --border: #e8dfcd;
+  --shadow: 0 8px 24px rgba(91, 63, 160, 0.1);
+  --radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Malgun Gothic",
+    "Apple SD Gothic Neo", sans-serif;
+  background-color: var(--bg-cream);
+  color: var(--text-main);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--purple-dark);
+  white-space: nowrap;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--purple-dark);
+  cursor: pointer;
+  padding: 6px 10px;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-sub);
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-list a:hover {
+  background: var(--purple-light);
+  color: var(--purple-dark);
+}
+
+.nav-list a.nav-cta {
+  background: var(--purple);
+  color: #fff;
+}
+
+.nav-list a.nav-cta:hover {
+  background: var(--purple-dark);
+  color: #fff;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.2s;
+}
+
+.btn-primary {
+  background: var(--purple);
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+  background: var(--purple-dark);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--purple-dark);
+  border: 2px solid var(--purple);
+}
+
+.btn-outline:hover {
+  background: var(--purple-light);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 64px 0 48px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+  color: var(--purple-dark);
+}
+
+.hero p {
+  font-size: 1.05rem;
+  color: var(--text-sub);
+  max-width: 560px;
+  margin: 0 auto 28px;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ---------- Sections ---------- */
+section {
+  padding: 40px 0;
+}
+
+.section-title {
+  font-size: 1.6rem;
+  color: var(--purple-dark);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.section-sub {
+  text-align: center;
+  color: var(--text-sub);
+  margin-bottom: 32px;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 0;
+  margin-top: 40px;
+  text-align: center;
+  color: var(--text-sub);
+  font-size: 0.85rem;
+}
+
+.footer-nav {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.footer-nav a:hover {
+  color: var(--purple-dark);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 760px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-list {
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: var(--card-bg);
+    flex-direction: column;
+    align-items: stretch;
+    border-bottom: 1px solid var(--border);
+    padding: 10px 20px 16px;
+    display: none;
+    gap: 4px;
+  }
+
+  .nav-list.open {
+    display: flex;
+  }
+
+  .nav-list a {
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+}

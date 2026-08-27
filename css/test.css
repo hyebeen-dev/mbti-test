@@ -1,0 +1,101 @@
+/* ===========================
+   MBTI 공부법 연구소 - 자가진단 테스트 페이지 전용 스타일
+   =========================== */
+
+.progress-wrap {
+  background: var(--border);
+  border-radius: 999px;
+  height: 10px;
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+
+.progress-bar {
+  height: 100%;
+  background: var(--purple);
+  width: 0%;
+  transition: width 0.3s;
+}
+
+.question {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 18px;
+  box-shadow: var(--shadow);
+}
+
+.question p.q-text {
+  font-weight: 700;
+  margin: 0 0 14px;
+  font-size: 1.02rem;
+}
+
+.options {
+  display: grid;
+  gap: 10px;
+}
+
+.option-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.option-label:hover {
+  background: var(--purple-light);
+}
+
+.option-label input {
+  accent-color: var(--purple);
+}
+
+.option-label input:checked ~ span,
+.option-label:has(input:checked) {
+  border-color: var(--purple);
+  background: var(--purple-light);
+}
+
+.form-error {
+  display: none;
+  color: #b3382c;
+  background: #fbe8e5;
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+#result-panel {
+  display: none;
+  text-align: center;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 40px 24px;
+}
+
+#result-panel .badge {
+  display: inline-block;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #fff;
+  background: var(--purple);
+  padding: 8px 24px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+#result-panel .result-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}

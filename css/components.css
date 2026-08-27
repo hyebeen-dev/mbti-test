@@ -1,0 +1,169 @@
+/* ===========================
+   MBTI 공부법 연구소 - 콘텐츠 컴포넌트
+   (그룹 카드 · 유형 카드 · 팁 카드 · 트레잇 박스 · 그룹 스위치)
+   =========================== */
+
+/* ---------- Group cards (index) ---------- */
+.group-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.group-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.group-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(91, 63, 160, 0.16);
+}
+
+.group-card .badge {
+  display: inline-block;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--purple);
+  background: var(--purple-light);
+  padding: 4px 14px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.group-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+}
+
+.group-card p {
+  color: var(--text-sub);
+  margin: 0 0 16px;
+  font-size: 0.95rem;
+}
+
+.group-card .types {
+  font-size: 0.85rem;
+  color: var(--purple-dark);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* ---------- Type cards (group pages) ---------- */
+.type-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.type-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.type-card h3 {
+  color: var(--purple-dark);
+  margin: 0 0 4px;
+  font-size: 1.1rem;
+}
+
+.type-card .type-name {
+  color: var(--text-sub);
+  font-size: 0.9rem;
+  margin: 0 0 12px;
+}
+
+.type-card ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.type-card li {
+  margin-bottom: 6px;
+  font-size: 0.93rem;
+}
+
+/* ---------- Tip list ---------- */
+.tip-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.tip-card {
+  background: var(--purple-light);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+}
+
+.tip-card h4 {
+  margin: 0 0 8px;
+  color: var(--purple-dark);
+}
+
+.tip-card p {
+  margin: 0;
+  color: var(--text-main);
+  font-size: 0.93rem;
+}
+
+/* ---------- Trait box ---------- */
+.trait-box {
+  background: var(--card-bg);
+  border-left: 5px solid var(--purple);
+  border-radius: 10px;
+  padding: 24px 28px;
+  box-shadow: var(--shadow);
+  margin-bottom: 12px;
+}
+
+.trait-box p {
+  margin: 0 0 10px;
+}
+
+.trait-box p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Group nav (cross links) ---------- */
+.group-switch {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.group-switch a {
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  font-weight: 700;
+}
+
+.group-switch a.current {
+  background: var(--purple);
+  color: #fff;
+  border-color: var(--purple);
+}
+
+.group-switch a:hover:not(.current) {
+  background: var(--purple-light);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 760px) {
+  .group-grid,
+  .type-grid,
+  .tip-list {
+    grid-template-columns: 1fr;
+  }
+}
