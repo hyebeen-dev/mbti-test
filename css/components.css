@@ -191,7 +191,7 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 430px) {
   .group-switch a {
     min-width: 0;
     flex: 1;
