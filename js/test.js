@@ -110,6 +110,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     formError.style.display = "none";
     var resultKey = computeResultKey(answers);
+    if (typeof gtag === "function") {
+      gtag("event", "test_complete", { group: resultKey });
+    }
     showResult(resultKey);
   });
 
